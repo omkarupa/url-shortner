@@ -1,11 +1,15 @@
 package com.ou_solutions.url_shortner.dto;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class URLShortner {
 	
-	private String url;
+	private String originalURL;
+	private String shortURL;
 
 
 }
