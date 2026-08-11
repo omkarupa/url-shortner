@@ -1,6 +1,7 @@
 package com.ou_solutions.url_shortner.controller;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,12 +15,12 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class URLRestController {
 	
-	private URLService service;
+	private final URLService service;
 
-	
+	@PostMapping("/create-url")
 	public ResponseEntity<URLDto> createShortURL(@RequestBody URLShortner url)
 	{
-		 service.createShortURL(url.getUrl()); 
+		 this.service.createShortURL(url); 
 		 
 		 return null;
 	}
